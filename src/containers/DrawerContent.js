@@ -18,7 +18,7 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import{ AuthContext } from '../components/context';
+import{ AuthContext } from '../context/authContext';
 
 export function DrawerContent(props) {
 
