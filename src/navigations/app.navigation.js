@@ -5,6 +5,7 @@ import MainTabScreen from './cards/mainTab.navigation';
 import SupportScreen from '../containers/SupportScreen';
 import SettingsScreen from '../containers/SettingsScreen';
 import BookmarkScreen from '../containers/BookmarkScreen';
+import { DrawerContent } from '../containers/DrawerContent';
 
 const Drawer = createDrawerNavigator();
 

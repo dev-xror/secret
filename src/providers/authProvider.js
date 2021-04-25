@@ -1,4 +1,6 @@
-const AuthProvider = React.useMemo(() => ({
+import React, {useMemo} from 'react';
+
+const AuthProvider = useMemo(() => ({
     signIn: async(foundUser) => {
       // setUserToken('fgkj');
       // setIsLoading(false);

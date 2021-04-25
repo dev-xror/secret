@@ -30,4 +30,4 @@ const authReducer = (prevState, action) => {
     }
   };
 
-export default loginReducer;
+export default authReducer;

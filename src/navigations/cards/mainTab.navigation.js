@@ -7,8 +7,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import HomeStack from './home.stack';
 import DetailsStack from './details.stack';
 
-import ExploreScreen from './ExploreScreen';
-import ProfileScreen from './ProfileScreen';
+import ExploreScreen from '../../containers/ExploreScreen';
+import ProfileScreen from '../../containers/ProfileScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 

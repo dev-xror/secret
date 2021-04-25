@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo, useReducer, useState } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 
 import { 
@@ -6,23 +6,23 @@ import {
 } from 'react-native-paper';
 
 import { AuthContext } from '../context/authContext';
-import AuthProvider from '../providers/authProvider';
+
 import RootNavigation from '../navigations/root.navigation';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
-import authReducer from './reducers/authReducer';
+import authReducer from '../reducers/authReducer';
 
 import {
     CustomDarkTheme,
     CustomDefaultTheme
-} from './theme';  
+} from '../theme';  
 
 const RootContainer = () => {
     // const [isLoading, setIsLoading] = React.useState(true);
     // const [userToken, setUserToken] = React.useState(null); 
 
-    const [isDarkTheme, setIsDarkTheme] = React.useState(false);
+    const [isDarkTheme, setIsDarkTheme] = useState(false);
 
     const initialLoginState = {
         isLoading: true,
@@ -32,7 +32,41 @@ const RootContainer = () => {
 
     const theme = isDarkTheme ? CustomDarkTheme : CustomDefaultTheme;
 
-    const [loginState, dispatch] = React.useReducer(authReducer, initialLoginState);
+    const [loginState, dispatch] = useReducer(authReducer, initialLoginState);
+
+    const AuthProvider = useMemo(() => ({
+        signIn: async(foundUser) => {
+            // setUserToken('fgkj');
+            // setIsLoading(false);
+            const userToken = String(foundUser[0].userToken);
+            const userName = foundUser[0].username;
+            
+            try {
+            await AsyncStorage.setItem('userToken', userToken);
+            } catch(e) {
+            console.log(e);
+            }
+            // console.log('user token: ', userToken);
+            dispatch({ type: 'LOGIN', id: userName, token: userToken });
+        },
+        signOut: async() => {
+            // setUserToken(null);
+            // setIsLoading(false);
+            try {
+            await AsyncStorage.removeItem('userToken');
+            } catch(e) {
+            console.log(e);
+            }
+            dispatch({ type: 'LOGOUT' });
+        },
+        signUp: () => {
+            // setUserToken('fgkj');
+            // setIsLoading(false);
+        },
+        toggleTheme: () => {
+            setIsDarkTheme( isDarkTheme => !isDarkTheme );
+        }
+    }), []);    
 
     useEffect(() => {
         setTimeout(async() => {

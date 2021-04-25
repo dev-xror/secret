@@ -5,10 +5,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import DetailsScreen from '../../containers/DetailsScreen';
 
-const DetailsStack = createStackNavigator();
+const StackNavigator = createStackNavigator();
 
 const DetailsStack = ({navigation}) => (
-    <DetailsStack.Navigator screenOptions={{
+    <StackNavigator.Navigator screenOptions={{
             headerStyle: {
             backgroundColor: '#1f65ff',
             },
@@ -17,12 +17,12 @@ const DetailsStack = ({navigation}) => (
             fontWeight: 'bold'
             }
         }}>
-        <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
+        <StackNavigator.Screen name="Details" component={DetailsScreen} options={{
             headerLeft: () => (
                 <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
             )
         }} />
-    </DetailsStack.Navigator>
+    </StackNavigator.Navigator>
 );
 
 export default DetailsStack;
