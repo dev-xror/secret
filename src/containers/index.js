@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useReducer, useState } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { ActivityIndicator, StatusBar, View } from 'react-native';
 
 import { 
     Provider as PaperProvider
@@ -16,7 +16,7 @@ import authReducer from '../reducers/authReducer';
 import {
     CustomDarkTheme,
     CustomDefaultTheme
-} from '../theme';  
+} from '../themes';  
 
 const RootContainer = () => {
     // const [isLoading, setIsLoading] = React.useState(true);
@@ -89,10 +89,13 @@ const RootContainer = () => {
                 <ActivityIndicator size="large"/>
             </View>
         );
+
+    const barStyle = theme.dark === true ? "light-content" : "dark-content";
     
     return (
         <PaperProvider theme={theme}>
             <AuthContext.Provider value={AuthProvider}>
+                <StatusBar barStyle={barStyle} hidden={false} />
                 <RootNavigation theme={theme} isAuthenticated={loginState.userToken !== null}/>
             </AuthContext.Provider>
         </PaperProvider>

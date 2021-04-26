@@ -4,10 +4,11 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import ExploreScreen from '../../containers/ExploreScreen';
-import ProfileScreen from '../../containers/ProfileScreen';
-import HomeScreen from '../../containers/HomeScreen';
 import DetailsScreen from '../../containers/DetailsScreen';
+
+import ComingSoon from '../../containers/ComingSoon';
+import Following from '../../containers/Following';
+
 const {  
   Navigator,
   Screen
@@ -15,12 +16,12 @@ const {
 
 const MainTabScreen = () => (
     <Navigator
-      initialRouteName="Home"
+      initialRouteName="Following"
       activeColor="#fff"
     >
       <Screen
         name="Following"
-        component={HomeScreen}
+        component={Following}
         options={{
           tabBarIcon: ({ color }) => (
             <Icon name="heart-outline" color={color} size={22}/>
@@ -38,7 +39,7 @@ const MainTabScreen = () => (
       />
       <Screen
         name="Browse"
-        component={ProfileScreen}
+        component={ComingSoon}
         options={{
           tabBarIcon: ({ color }) => (
             <Icon name="copy-outline" color={color} size={22} />

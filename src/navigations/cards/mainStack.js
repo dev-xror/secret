@@ -24,7 +24,10 @@ const MainStack = ({navigation}) => {
   return (
     <HomeStack.Navigator screenOptions={{
         headerTitleStyle: {
-        fontWeight: 'bold'
+          fontWeight: 'bold',
+        },
+        headerStyle: {
+          backgroundColor: colors.background
         }
     }}>
     <HomeStack.Screen name="Home" component={MainTab} options={{

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import colors from '../../theme/color';
+import colors from '../../themes/colors';
 
 export const OnlineStatus = styled.View`
   background: ${colors.green};

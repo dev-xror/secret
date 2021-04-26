@@ -25,7 +25,7 @@ const CustomDefaultTheme = {
     colors: {
       ...NavigationDarkTheme.colors,
       ...PaperDarkTheme.colors,
-      background: '#333333',
+      background: '#000014',
       text: '#ffffff'
     }
   }
