@@ -11,7 +11,7 @@ const RootNavigation = ({theme, isAuthenticated}) => {
   return (
     <NavigationContainer theme={theme}>
       { 
-        isAuthenticated === true ? <AppNavigation/> : <AuthNavigation/>
+        isAuthenticated === true ? <AppNavigation theme={theme}/> : <AuthNavigation theme={theme}/>
       }
     </NavigationContainer>
   );

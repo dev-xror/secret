@@ -4,64 +4,48 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeStack from './home.stack';
-import DetailsStack from './details.stack';
-
 import ExploreScreen from '../../containers/ExploreScreen';
 import ProfileScreen from '../../containers/ProfileScreen';
-
-const Tab = createMaterialBottomTabNavigator();
+import HomeScreen from '../../containers/HomeScreen';
+import DetailsScreen from '../../containers/DetailsScreen';
+const {  
+  Navigator,
+  Screen
+} = createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
-    <Tab.Navigator
+    <Navigator
       initialRouteName="Home"
       activeColor="#fff"
     >
-      <Tab.Screen
-        name="Home"
-        component={HomeStack}
+      <Screen
+        name="Following"
+        component={HomeScreen}
         options={{
-          tabBarLabel: 'Home',
-          tabBarColor: '#009387',
           tabBarIcon: ({ color }) => (
-            <Icon name="ios-home" color={color} size={26} />
+            <Icon name="heart-outline" color={color} size={22}/>
           ),
         }}
       />
-      <Tab.Screen
-        name="Notifications"
-        component={DetailsStack}
+      <Screen
+        name="Discover"
+        component={DetailsScreen}
         options={{
-          tabBarLabel: 'Updates',
-          tabBarColor: '#1f65ff',
           tabBarIcon: ({ color }) => (
-            <Icon name="ios-notifications" color={color} size={26} />
+            <Icon name="compass-outline" color={color} size={22} />
           ),
         }}
       />
-      <Tab.Screen
-        name="Profile"
+      <Screen
+        name="Browse"
         component={ProfileScreen}
         options={{
-          tabBarLabel: 'Profile',
-          tabBarColor: '#694fad',
           tabBarIcon: ({ color }) => (
-            <Icon name="ios-person" color={color} size={26} />
+            <Icon name="copy-outline" color={color} size={22} />
           ),
         }}
       />
-      <Tab.Screen
-        name="Explore"
-        component={ExploreScreen}
-        options={{
-          tabBarLabel: 'Explore',
-          tabBarColor: '#d02860',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-aperture" color={color} size={26} />
-          ),
-        }}
-      />
-    </Tab.Navigator>
+    </Navigator>
 );
 
 export default MainTabScreen;
