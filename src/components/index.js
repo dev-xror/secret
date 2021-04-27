@@ -1,4 +1,4 @@
-import React, {useMemo, useEffect} from 'react';
+import React, {useMemo} from 'react';
 import { 
     FlatList, 
 } from 'react-native';
@@ -6,23 +6,16 @@ import {
     Container, 
     Main, 
     Wrapper 
-} from "./styles";
-import { useTheme } from 'react-native-paper';
-
+  } from "./styles";
+  
+import Header from '../../components/Header';
 import Heading from '../../components/Heading';
 import Title from '../../components/Title';
 import TrendingList from '../../components/TrendingList';
 import RecommendedList from '../../components/RecommendedList';
 
-import axios from 'axios';
+const Browse = () => {
 
-const BASE_URI = 'https://uhooru.live/api/v1';
-
-const token = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJtb3JwaCIsImV4cCI6MTYxOTI4ODIzNCwiaWF0IjoxNjE2ODY5MDM0LCJpc3MiOiJtb3JwaCIsImp0aSI6IjAwZDNiZmRjLTU4ODgtNDI3Mi05NjM2LWE4NTZiZjhmYTFhNiIsIm5iZiI6MTYxNjg2OTAzMywic3ViIjoiMzEiLCJ0eXAiOiJhY2Nlc3MifQ.eVH_lxr0gHUQO-9g1vDIRDYz4sFmmfzuw0F4fj_w1IUw8sHYZmJUeMZ0DN8cVpM6UApxfwZF8q5y5N2oAYXY_w";
-
-
-const Discover = () => {
-  const { colors } = useTheme();
     const { data, indices } = useMemo(() => {
         const items = [
           {
@@ -54,8 +47,9 @@ const Discover = () => {
       }, []);
 
     return (
-      <Wrapper style={{backgroundColor: colors.background}}>
+        <Wrapper>
             <Container>
+                <Header />
                 <Main>
                     <FlatList
                         data={data}
@@ -72,4 +66,4 @@ const Discover = () => {
     )
 };
 
-export default Discover;
+export default Browse;

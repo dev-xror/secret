@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useTheme } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import MainTab from './mainTab.navigation';
+import MainTab from './main.tab';
 
 import {
   Avatar,
@@ -34,7 +34,7 @@ const MainStack = ({navigation}) => {
       title: null,
       headerLeft: () => (
           <Avatar onPress={() => navigation.openDrawer()}  style={{ justifyContent: 'center', alignItems: 'center', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
-            <Icon name="md-person-outline" size={25} color={fontColor}></Icon>
+            <Icon name="person-outline" size={25} color={fontColor}></Icon>
             <OnlineStatus />
           </Avatar>
       ),

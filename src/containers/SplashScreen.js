@@ -25,7 +25,7 @@ const SplashScreen = ({navigation}) => {
                 duraton="1500"
             source={require('../assets/logo.png')}
             style={styles.logo}
-            resizeMode="stretch"
+            resizeMode="center"
             />
         </View>
         <Animatable.View 
@@ -36,7 +36,7 @@ const SplashScreen = ({navigation}) => {
         >
             <Text style={[styles.title, {
                 color: colors.text
-            }]}>Stay connected with everyone!</Text>
+            }]}>Stay connected with everyone through videos!</Text>
             <Text style={styles.text}>Sign in with account</Text>
             <View style={styles.button}>
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>

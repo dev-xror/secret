@@ -4,8 +4,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import DetailsScreen from '../../containers/DetailsScreen';
-
+import Discover from '../../containers/Discover';
 import ComingSoon from '../../containers/ComingSoon';
 import Following from '../../containers/Following';
 
@@ -30,7 +29,7 @@ const MainTabScreen = () => (
       />
       <Screen
         name="Discover"
-        component={DetailsScreen}
+        component={Discover}
         options={{
           tabBarIcon: ({ color }) => (
             <Icon name="compass-outline" color={color} size={22} />

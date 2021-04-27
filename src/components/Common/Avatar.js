@@ -19,5 +19,5 @@ export const Avatar = styled.TouchableOpacity`
   width: 32px;
   height: 32px;
   border-radius: 16px;
-  marginLeft: 15;
+  marginLeft: 15px;
 `;

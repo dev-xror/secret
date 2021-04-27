@@ -5,7 +5,7 @@ import SupportScreen from '../containers/SupportScreen';
 import SettingsScreen from '../containers/SettingsScreen';
 import BookmarkScreen from '../containers/BookmarkScreen';
 import { DrawerContent } from '../containers/DrawerContent';
-import MainStack from './cards/mainStack';
+import MainStack from './cards/main.stack';
 const Drawer = createDrawerNavigator();
 
 const AppNavigation = ({theme}) => (
