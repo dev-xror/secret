@@ -18,7 +18,7 @@ const Recommended = ({movie}) => {
   const { colors } = useTheme();
   const navigation = useNavigation();
   const onPress = () => {
-    navigation.navigate('Video', { id: movie.id })
+    navigation.navigate('VideoPlayer', { movie: movie })
   }
 
   return (

@@ -6,6 +6,9 @@ import { useTheme } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import MainTab from './main.tab';
+import VideoPlayer from '../../containers/VideoPlayer';
+import VideoPlayer2 from '../../containers/VideoPlayer2';
+import WatchParty from '../../containers/WatchParty';
 
 import {
   Avatar,
@@ -46,6 +49,8 @@ const MainStack = ({navigation}) => {
         </View>
       )
     }} />
+    <HomeStack.Screen options={{headerShown: false}} name="VideoPlayer" component={VideoPlayer}></HomeStack.Screen>
+    <HomeStack.Screen options={{headerShown: false}} name="WatchParty" component={WatchParty}></HomeStack.Screen>
 </HomeStack.Navigator>
 )};
 
